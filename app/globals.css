@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "SF Pro Text", "Segoe UI", system-ui,
+    sans-serif;
+}
+
+.hero-shell {
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(99, 102, 241, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(14, 165, 233, 0.18), transparent 55%),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(241, 245, 249, 0.95));
+}
+
+.dark .hero-shell {
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(88, 99, 255, 0.25), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(14, 165, 233, 0.25), transparent 55%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(2, 6, 23, 0.85));
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+.dark .grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.9s ease-out both;
+}
+
+.fade-in {
+  animation: fade-in 1s ease-out both;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
