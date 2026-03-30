@@ -92,7 +92,7 @@ export default function Home() {
                   {/* Avatar */}
                   <div className="rounded-[22px] bg-gradient-to-br from-indigo-400/30 via-violet-400/20 to-sky-400/30 p-[3px]">
                     <Image
-                      src="/profile.png"
+                      src="/portfolio1.png"
                       width={200}
                       height={200}
                       alt="Portrait of Annah Khumalo"
